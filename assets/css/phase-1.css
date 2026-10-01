@@ -46,4 +46,11 @@ article {
         width: 100%;
         padding: 1rem;
     }
+
+    main {
+        width: 960;
+        margin: 0 auto;
+        padding: 1rem;
+    }
+    
 }
