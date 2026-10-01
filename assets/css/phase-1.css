@@ -36,21 +36,31 @@ article {
         display: none;
     }
 
-    header {
+    body >header {
         width: 100%;
-        padding: 1rem;  
+        padding: 1rem;
+        position: fixed; 
+        top: 0;
+        left: 0; 
+        z-index: 1000;
+        background: white;
     }
     
     nav {
         display: block;
         width: 100%;
         padding: 1rem;
+        position: fixed;
+        top: 80px;
+        left: 0;
+        z-index: 999;
+        background: white; 
     }
 
     main {
-        width: 960;
+        width: 960px;
         margin: 0 auto;
-        padding: 1rem;
+        padding: 11rem 1rem 1rem;
     }
 
     footer {
