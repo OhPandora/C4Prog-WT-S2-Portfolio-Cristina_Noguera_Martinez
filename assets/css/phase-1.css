@@ -12,3 +12,16 @@ footer {
     width: 100%;
     padding: 1rem;
 }
+
+nav, 
+aside {
+    display: none;
+}
+
+body > header::after {
+    content: "☰";
+    display: block;
+    font-size: 2rem;
+    text-align: right;
+    padding: 0 1rem;
+}
