@@ -52,5 +52,10 @@ article {
         margin: 0 auto;
         padding: 1rem;
     }
-    
+
+    footer {
+        width: 100%;
+        padding: 1rem;  
+    }
+
 }
