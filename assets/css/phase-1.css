@@ -31,6 +31,24 @@ article {
     padding: 1rem;
 }
 
+body > header {
+    background-color: #473338; 
+    color: #FFFFFF;
+}
+
+nav {
+    background-color: #CCAAA3; 
+} 
+
+aside {
+    background-color: #CBCCA3; 
+}
+
+footer {
+    background-color: #63474D;
+    color: #FFFFFF;
+}
+
 @media (min-width: 768px) {
     body > header::after {
         display: none;
@@ -43,7 +61,7 @@ article {
         top: 0;
         left: 0; 
         z-index: 1000;
-        background: white;
+        background: #473338;
     }
     
     nav {
@@ -54,7 +72,7 @@ article {
         top: 80px;
         left: 0;
         z-index: 999;
-        background: white; 
+        background: #CCAAA3; 
     }
 
     main {
