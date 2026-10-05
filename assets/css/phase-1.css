@@ -55,6 +55,17 @@ article img {
     display: block;
 }
 
+figure {
+    margin: 1.5rem 0;
+}
+
+figcaption {
+    padding: 0.5rem;
+    text-align: center;
+    background-color: #63474D;
+    color: #FFFFFF;
+}
+
 @media (min-width: 768px) {
     body > header::after {
         display: none;
@@ -103,6 +114,34 @@ article img {
     footer {
         width: 100%;
         padding: 1rem;  
+    }
+
+    footer nav {
+        display: block;
+        position: static;
+        width: 100%;
+        padding: 0%;
+        background-color: transparent;
+    }
+
+    footer nav ul {
+        list-style: none;
+        padding: 0;
+        margin: 1.5rem 0 0;
+        text-align: center;
+    }
+
+    footer nav li {
+        display: inline;
+        margin-right: 1rem;
+    }
+
+    footer nav a {
+        color: #FFFFFF;
+    }
+
+    footer > div {
+        text-align: center;
     }
 
 }
