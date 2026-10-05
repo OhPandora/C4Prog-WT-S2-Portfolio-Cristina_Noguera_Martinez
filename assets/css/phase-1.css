@@ -49,6 +49,12 @@ footer {
     color: #FFFFFF;
 }
 
+article img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
 @media (min-width: 768px) {
     body > header::after {
         display: none;
