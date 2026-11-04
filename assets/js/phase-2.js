@@ -32,11 +32,11 @@ function buildApiUrl(word) {
     const encodedWord = encodeURIComponent(word);
 
     if (dictionaryCheckbox.checked) {
-        return 'https://api.api-ninjas.com/v1/dictionary?word=${encodedWord}';
+        return `https://api.api-ninjas.com/v1/dictionary?word=${encodedWord}`;
     }
 
     if (thesaurusCheckbox.checked) {
-        return 'https://api.api-ninjas.com/v1/thesaurus?word=${encodedWord}';
+        return `https://api.api-ninjas.com/v1/thesaurus?word=${encodedWord}`;
     }
 
     return null;
@@ -49,8 +49,25 @@ const apiForm = document.getElementById('api-form');
 apiForm.addEventListener('submit', function (event) {
     event.preventDefault();
 
-    const word = searchInput.value.trim();
-    const apiUrl = buildApiUrl(word);
+    
+const word = searchInput.value.trim();
+
+// Check if an API has been selected
+if (!dictionaryCheckbox.checked && !thesaurusCheckbox.checked) {
+    responseContent.textContent = 'Please select an API.';
+    return;
+}
+
+// Check if the search field is empty
+if (!word) {
+    responseContent.textContent = 'Please enter a word to search.';
+    searchInput.focus();
+    return;
+}
+
+// Build the API URL
+const apiUrl = buildApiUrl(word);
+
 
     fetch(apiUrl, {
         method: 'GET',
