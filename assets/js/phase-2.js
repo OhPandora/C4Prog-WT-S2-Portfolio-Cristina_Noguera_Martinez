@@ -32,12 +32,34 @@ function buildApiUrl(word) {
     const encodedWord = encodeURIComponent(word);
 
     if (dictionaryCheckbox.checked) {
-        return `https://api.api-ninjas.com/v1/dictionary?word=${encodedWord}`;
+        return 'https://api.api-ninjas.com/v1/dictionary?word=${encodedWord}';
     }
 
     if (thesaurusCheckbox.checked) {
-        return `https://api.api-ninjas.com/v1/thesaurus?word=${encodedWord}`;
+        return 'https://api.api-ninjas.com/v1/thesaurus?word=${encodedWord}';
     }
 
     return null;
 }
+
+// Get the form element
+const apiForm = document.getElementById('api-form');
+
+// Execute the API request when the form is submitted
+apiForm.addEventListener('submit', function (event) {
+    event.preventDefault();
+
+    const word = searchInput.value.trim();
+    const apiUrl = buildApiUrl(word);
+
+    fetch(apiUrl, {
+        method: 'GET',
+        headers: {
+            'X-Api-Key': API_KEY
+        }
+    })
+        .then(response => response.json())
+        .then(data => {
+            responseContent.textContent = JSON.stringify(data, null, 2);
+        });
+});
