@@ -53,23 +53,23 @@ apiForm.addEventListener('submit', function (event) {
     event.preventDefault();
 
     
-const word = searchInput.value.trim();
+    const word = searchInput.value.trim();
 
-// Check if an API has been selected
-if (!dictionaryCheckbox.checked && !thesaurusCheckbox.checked) {
-    responseContent.textContent = 'Please select an API.';
-    return;
-}
+    // Check if an API has been selected
+    if (!dictionaryCheckbox.checked && !thesaurusCheckbox.checked) {
+        responseContent.textContent = 'Please select an API.';
+        return;
+    }
 
-// Check if the search field is empty
-if (!word) {
-    responseContent.textContent = 'Please enter a word to search.';
-    searchInput.focus();
-    return;
-}
+    // Check if the search field is empty
+    if (!word) {
+        responseContent.textContent = 'Please enter a word to search.';
+        searchInput.focus();
+        return;
+    }
 
-// Build the API URL
-const apiUrl = buildApiUrl(word);
+    // Build the API URL
+    const apiUrl = buildApiUrl(word);
 
 
     fetch(apiUrl, {
@@ -77,21 +77,21 @@ const apiUrl = buildApiUrl(word);
         headers: {
             'X-Api-Key': API_KEY
         }
-    
-})
-    .then(response => {
-        if (!response.ok) {
-            throw new Error('API request failed: ' + response.status);
-        }
+        
+    })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('API request failed: ' + response.status);
+            }
 
-        return response.json();
-    })
-    .then(data => {
-        responseContent.textContent = JSON.stringify(data, null, 2);
-    })
-    .catch(error => {
-        responseContent.textContent = 'Unable to retrieve data from the API. Please try again later.';
-        console.error('API Error:', error);
-    });
+            return response.json();
+        })
+        .then(data => {
+            responseContent.textContent = JSON.stringify(data, null, 2);
+        })
+        .catch(error => {
+            responseContent.textContent = 'Unable to retrieve data from the API. Please try again later.';
+            console.error('API Error:', error);
+        });
 
 });
