@@ -1,3 +1,6 @@
+/* jshint esversion: 6 */
+/* global API_KEY */
+
 // Get the API checkboxes
 const dictionaryCheckbox = document.getElementById('dictionary-api');
 const thesaurusCheckbox = document.getElementById('thesaurus-api');
