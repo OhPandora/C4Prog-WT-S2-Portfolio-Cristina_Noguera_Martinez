@@ -1,0 +1,99 @@
+
+/* Phase 2 - API form styling */
+
+.api-section {
+    width: 100%;
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.api-section h3 {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+#api-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#api-form fieldset,
+.form-card,
+.api-response {
+    background-color: #ffffff;
+    padding: 25px;
+    border: none;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.12);
+}
+
+#api-form legend {
+    font-weight: bold;
+    text-align: center;
+    padding: 0 8px;
+}
+
+.api-options {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.api-options label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+}
+
+.form-card {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-input {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-input input {
+    width: 100%;
+    padding: 12px;
+    box-sizing: border-box;
+}
+
+#get-response {
+    align-self: center;
+    padding: 12px 25px;
+    cursor: pointer;
+}
+
+.api-response {
+    margin-top: 15px;
+    text-align: center;
+    overflow-wrap: anywhere;
+}
+
+.api-response h4 {
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+
+/* Responsive styling */
+
+@media (min-width: 768px) {
+    .api-section {
+        padding: 30px;
+    }
+
+    #api-form fieldset,
+    .form-card,
+    .api-response {
+        padding: 30px;
+    }
+}
